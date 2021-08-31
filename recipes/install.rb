@@ -1,5 +1,6 @@
 group node['consul']['group'] do
     action :create
+    gid node['consul']['gid']
     not_if "getent group #{node['consul']['group']}"
     not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -11,6 +12,7 @@ user node['consul']['user'] do
     shell "/bin/bash"
     manage_home false
     action :create
+    uid node['consul']['uid']
     not_if "getent passwd #{node['consul']['user']}"
     not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
