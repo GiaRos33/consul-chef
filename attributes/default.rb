@@ -5,7 +5,8 @@ default['consul']['home']                       = "#{node['consul']['dir']}/cons
 default['consul']['conf_dir']                   = "#{node['consul']['home']}/consul.d"
 default['consul']['data_dir']                   = "#{node['consul']['home']}/data_dir"
 default['consul']['bin_dir']                    = "#{node['consul']['home']}/bin"
-
+default['consul']['uid']                        = "10110"
+default['consul']['gid']                        = "10111"
 default['consul']['version']                    = "1.7.0"
 default['consul']['bin_url']                    = "#{node['download_url']}/consul/consul_#{node['consul']['version']}_linux_amd64.zip"
 default['consul']['use_dnsmasq']                = "true"
